@@ -28,6 +28,6 @@ jobs:
       
       - uses: actions/checkout@v2
       - name: Create tag if necessary
-        uses: PolarBearAndrew/daily-version-action@v3
+        uses: PolarBearAndrew/daily-version-action@v3.0.1
         with:
           prefix: release-v # This will cause the tags to start with v, like "v20.12.31`
