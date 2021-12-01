@@ -21,10 +21,10 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
-      - name: ensure Taipei timezone
-        uses: szenius/set-timezone@v1.0
+      - name: Setup timezone
+        uses: zcong1993/setup-timezone@master
         with:
-          timezoneLinux: "Asia/Singapore"
+          timezone: Asia/Shanghai
       
       - uses: actions/checkout@v2
       - name: Create tag if necessary
