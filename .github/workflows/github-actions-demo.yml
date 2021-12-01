@@ -24,9 +24,7 @@ jobs:
       - run: ensure Taipei timezone
       - uses: szenius/set-timezone@v1.0
         with:
-          timezoneLinux: "Asia/Taipei"
-          timezoneMacos: "Asia/Taipei"
-          timezoneWindows: "Taipei Standard Time"
+          timezoneLinux: "Asia/Singapore"
       
       - uses: actions/checkout@v2
       - name: Create tag if necessary
