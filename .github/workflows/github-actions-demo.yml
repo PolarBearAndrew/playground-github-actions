@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   run_reusable_workflow_job:
-    uses: PolarBearAndrew/playground-github-actions/.github/workflows/todo-1@main
+    uses: PolarBearAndrew/playground-github-actions/.github/workflows/todo-1.yaml@main
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
