@@ -3,7 +3,7 @@ on:
   workflow_call:
 
 jobs:
-  Explore-GitHub-Actions:
+  reusable_workflow_job:
     runs-on: ubuntu-latest
     steps:
       - name: Sleep for 30 seconds
