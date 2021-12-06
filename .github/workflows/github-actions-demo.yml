@@ -24,7 +24,8 @@ jobs:
       #   with:
       #     timezone: Asia/Shanghai
 
-      - uses: PolarBearAndrew/playground-github-actions/.github/workflows/todo-1
+      - uses: PolarBearAndrew/playground-github-actions/.github/workflows/todo-1@main
+      
       - uses: actions/checkout@v2
       - name: Create tag if necessary
         uses: PolarBearAndrew/daily-version-action@v3.0.2
