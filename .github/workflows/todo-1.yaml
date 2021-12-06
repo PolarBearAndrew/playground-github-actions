@@ -1,12 +1,15 @@
 name: GitHub Actions Demo
 on:
-  push:
-    branches:
-      - main
+  workflow_call:
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Sleep for 30 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '30s'
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
@@ -17,16 +20,3 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
-
-      # - name: Setup timezone
-      #   uses: zcong1993/setup-timezone@master
-      #   with:
-      #     timezone: Asia/Shanghai
-
-      - uses: PolarBearAndrew/playground-github-actions/.github/workflows/todo-1
-      - uses: actions/checkout@v2
-      - name: Create tag if necessary
-        uses: PolarBearAndrew/daily-version-action@v3.0.2
-        with:
-          prefix: release-v # This will cause the tags to start with v, like "v20.12.31`
