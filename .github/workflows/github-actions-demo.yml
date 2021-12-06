@@ -4,6 +4,8 @@ on:
     branches:
       - main
 jobs:
+  run_reusable_workflow_job:
+    uses: PolarBearAndrew/playground-github-actions/.github/workflows/todo-1@main
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
@@ -23,8 +25,6 @@ jobs:
       #   uses: zcong1993/setup-timezone@master
       #   with:
       #     timezone: Asia/Shanghai
-      - name: run reusable_workflow_job
-        uses: PolarBearAndrew/playground-github-actions/.github/workflows/todo-1@main
       
       - uses: actions/checkout@v2
       - name: Create tag if necessary
