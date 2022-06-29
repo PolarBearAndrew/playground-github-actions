@@ -1,0 +1,21 @@
+name: GitHub Actions Demo
+on:
+  push:
+    branches:
+      - main
+jobs:
+  run_reusable_workflow_job:
+    uses: PolarBearAndrew/playground-github-actions/.github/workflows/todo-1.yaml@main
+  Explore-GitHub-Actions:
+    needs: run_reusable_workflow_job
+    runs-on: ubuntu-latest
+    steps:
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - uses: actions/checkout@v2
+      - name: Create tag if necessary
+        uses: PolarBearAndrew/daily-version-action@v3.0.2
+        with:
+          prefix: release-v # This will cause the tags to start with v, like "v20.12.31`
