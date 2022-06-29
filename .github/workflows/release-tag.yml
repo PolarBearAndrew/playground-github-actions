@@ -4,10 +4,7 @@ on:
     branches:
       - main
 jobs:
-  run_reusable_workflow_job:
-    uses: PolarBearAndrew/playground-github-actions/.github/workflows/todo-1.yaml@main
-  Explore-GitHub-Actions:
-    needs: run_reusable_workflow_job
+  release-tags:
     runs-on: ubuntu-latest
     steps:
       - name: List files in the repository
